@@ -8,7 +8,7 @@ In the age of digital content, users are often overwhelmed by thousands of movie
 This project aims to build such a recommender system using content based filtering, trained on historical ratings data from MovieLens.
 
 ## Project Overview
-This project builds a **personalized movie recommendation system** using the **MovieLens dataset** to suggest films based on user ratings
+This project builds a **personalized movie recommendation system** using the **MovieLens dataset** to suggest films based on user ratings.
 
 ## Business Understanding
 ### Objective
@@ -16,8 +16,8 @@ To improve user satisfaction and engagement on a movie streaming platform by pro
 
 ### Scope
 This project uses the MovieLens `ml-latest-small` dataset. It focuses on:
-- Explicit rating data (0.5 to 5.0 scale)
-- Recommending unseen movies to users
+- Explicit rating data (0.5 to 5.0 scale).
+- Recommending unseen movies to users.
 
 ### Success Criteria
 
@@ -39,8 +39,8 @@ The dataset used is the `ml-latest-small` version from MovieLens, containing 100
 - `links.csv`  – External references (IMDb, TMDb)
 
 ### Ratings Data:
-- Ratings range from 0.5 to 5.0 in 0.5 increments
-- Explicit feedback format
+- Ratings range from 0.5 to 5.0 in 0.5 increments.
+- Explicit feedback format.
 - 
 ## Modelling and Evaluation
 The project implemented a content-based movie recommendation system using cosine similarity on TF-IDF vectors of movie genres and descriptions.The system works by understanding what kind of movies a person likes—such as genre or storyline—and then suggesting similar ones they haven’t seen yet. Evaluation was carried out using RMSE and MAE metrics.
