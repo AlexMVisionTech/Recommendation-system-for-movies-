@@ -1,48 +1,83 @@
-# Content Based Movie Recommendation Systems
+## **Movie Recommendation System – Content-Based & Collaborative Filtering**
 
-## Business Problem
-In the age of digital content, users are often overwhelmed by thousands of movie choices. Without a guiding system, users may miss out on films they would have enjoyed, leading to reduced satisfaction and platform engagement.
+### Business Problem
 
-> **How can we accurately recommend the Top 5 movies to a user based on their historical movie ratings using content-based filtering techniques?**
+In today’s digital world, users are overwhelmed by endless movie options. Without intelligent recommendation systems, they may miss out on films they’d love — reducing satisfaction and platform engagement.
 
-This project aims to build such a recommender system using content based filtering, trained on historical ratings data from MovieLens.
+> **How can we recommend the Top 5 movies to a user based on their historical ratings using content-based and collaborative filtering techniques?**
 
-## Project Overview
-This project builds a **personalized movie recommendation system** using the **MovieLens dataset** to suggest films based on user ratings.
+This project uses the MovieLens dataset to build both **content-based** and **collaborative filtering** recommendation systems.
+
+---
+
+### Project Overview
+
+This project creates a **personalized movie recommender system** using:
+
+- **Content-Based Filtering** – recommends movies similar in genre/content to those the user liked.
+- **Collaborative Filtering** – recommends movies based on other users with similar tastes.
+
+The goal is to suggest **Top 5 relevant movies** per user.
+
+---
 
 ## Business Understanding
-### Objective
-To improve user satisfaction and engagement on a movie streaming platform by providing **Top 5 personalised movie recommendations** based on users' past ratings. The goal is to simulate how platforms like Netflix and Prime Video tailor suggestions to each user.
 
-### Scope
-This project uses the MovieLens `ml-latest-small` dataset. It focuses on:
-- Explicit rating data (0.5 to 5.0 scale).
-- Recommending unseen movies to users.
+###  Objective
 
-### Success Criteria
+Improve user satisfaction by delivering personalized recommendations, just like Netflix or Amazon Prime Video.
 
-| Metric                 | Goal                            |
-|------------------------|----------------------------------|
-| RMSE / MAE             | Below 1.0                        |
-| Recommendation Relevance | Top 5 suggestions match user interests |
-| Coverage               | Recommendations generated for most users |
-| Scalability            | Can extend to larger datasets or real-world scenarios |
+###  Scope
+
+- Uses the MovieLens `ml-latest-small` dataset.
+- Focuses on **explicit user ratings**.
+- Suggests **unseen and potentially interesting movies**.
+
+---
 
 ## Data Understanding
 
-The dataset used is the `ml-latest-small` version from MovieLens, containing 100,836 ratings by 610 users across 9,742 movies.
+The project uses the `ml-latest-small` dataset from MovieLens:
 
-### Key Files:
-- `movies.csv` – Contains `movieId`, `title`, `genres`
-- `ratings.csv` – Contains `userId`, `movieId`, `rating`, `timestamp`
-- `tags.csv`  – Contains user-generated tags
-- `links.csv`  – External references (IMDb, TMDb)
+- **100,836 ratings**
+- **610 users**
+- **9,742 movies**
 
-### Ratings Data:
-- Ratings range from 0.5 to 5.0 in 0.5 increments.
-- Explicit feedback format.
-- 
-## Modelling and Evaluation
-The project implemented a content-based movie recommendation system using cosine similarity on TF-IDF vectors of movie genres and descriptions.The system works by understanding what kind of movies a person likes—such as genre or storyline—and then suggesting similar ones they haven’t seen yet. Evaluation was carried out using RMSE and MAE metrics.
+### Key Files
+
+- `movies.csv` – Movie titles and genres  
+- `ratings.csv` – User ratings for movies  
+- `tags.csv` – User-generated tags  
+- `links.csv` – External IDs for IMDb and TMDb  
+
+---
+
+##  Modeling Approach
+
+### Content-Based Filtering
+- Utilizes **TF-IDF vectorization** on movie genres.
+- Uses **cosine similarity** to find movies with similar content.
+- Recommends movies the user hasn’t rated but are content-wise similar to those they liked.
+
+### Collaborative Filtering
+- Creates a **user-item matrix** from ratings.
+- Identifies users with similar preferences.
+- Recommends movies liked by similar users but unseen by the current user.
+
+---
+
 ## Conclusion
-The recommender system demonstrated effective personalized recommendations with good predictive performance. Future improvements could include hybrid approaches combining content and collaborative filtering and integrating user feedback or deep learning models for enhanced accuracy.
+
+- Built a working movie recommendation system using both **content-based** and **collaborative filtering**.
+- The system provides **Top 5 personalized suggestions**.
+- Results were interpretable and aligned well with expected user interests.
+- **Content-based model successfully deployed** as a simple web application using Streamlit.
+
+---
+
+##  What's Next?
+
+-  Add collaborative filtering using a user-item matrix to improve recommendation diversity.
+-  Combine content-based and collaborative approaches into a **hybrid recommendation system**.
+-  Incorporate additional metadata like **movie tags, summaries, or cast info** to enrich content-based filtering.
+-  Explore advanced techniques such as **matrix factorization** or **deep learning models** for enhanced personalization.
